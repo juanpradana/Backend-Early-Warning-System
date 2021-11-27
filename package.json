@@ -4,6 +4,8 @@
   "description": "Dibuat untuk memenuhi tugas capstone Studi Independen Bersertifikat Kampus Merdeka Dicoding (Pengembang Front-End Web dan Back-End)",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon ./src/server.js",
+    "lint": "eslint ./src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/juanpradana/Backend-Early-Warning-System/issues"
   },
-  "homepage": "https://github.com/juanpradana/Backend-Early-Warning-System#readme"
+  "homepage": "https://github.com/juanpradana/Backend-Early-Warning-System#readme",
+  "dependencies": {
+    "@hapi/hapi": "^20.2.1",
+    "nanoid": "^3.1.30"
+  },
+  "devDependencies": {
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "nodemon": "^2.0.15"
+  }
 }
