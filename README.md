@@ -4,3 +4,12 @@
 ## Originally developed by:
 - Aulia Rahman
 - Muhammad Juan Pradana
+
+## How To Use
+GET
+http://host:port/datas?codeUnit=
+http://host:port/datas
+
+POST
+http://host:port/datas?codeUnit=
+(type:json)

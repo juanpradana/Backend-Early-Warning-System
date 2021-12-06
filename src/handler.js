@@ -1,7 +1,7 @@
 const datas = require('./datas');
 const CONFIG = require('./global/config');
 
-const addBookHandler = (request, h) => {
+const addDataHandler = (request, h) => {
   const { codeUnit } = request.query;
 
   const {
@@ -52,7 +52,7 @@ const addBookHandler = (request, h) => {
   return response;
 };
 
-const getAllBookHandler = (request, h) => {
+const getAllDataHandler = (request, h) => {
   const { codeUnit } = request.query;
   if (CONFIG.CONFIG.CODE_LIST.includes(codeUnit)) {
     try {
@@ -81,6 +81,6 @@ const getAllBookHandler = (request, h) => {
 };
 
 module.exports = {
-  addBookHandler,
-  getAllBookHandler,
+  addDataHandler,
+  getAllDataHandler,
 };
