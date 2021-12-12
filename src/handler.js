@@ -37,7 +37,7 @@ const addDataHandler = (request, h) => {
       status: 'success',
       message: 'Data berhasil ditambahkan',
       data: {
-        dataDate: date,
+        data: newData,
       },
     });
     response.code(201);
