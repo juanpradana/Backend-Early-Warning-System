@@ -20,12 +20,12 @@ const addDataHandler = (request, h) => {
 
   if (CONFIG.CONFIG.CODE_LIST.includes(codeUnit)) {
     if (datas.find((x) => x[`${codeUnit}`])) {
-      datas.find((data) => data[`${codeUnit}`])[`${codeUnit}`].push(newData);
+      datas.find((data) => data[`${codeUnit}`])[`${codeUnit}`].unshift(newData);
     } else {
       const tempDatas = {};
       tempDatas[`${codeUnit}`] = [];
-      tempDatas[`${codeUnit}`].push(newData);
-      datas.push(tempDatas);
+      tempDatas[`${codeUnit}`].unshift(newData);
+      datas.unshift(tempDatas);
     }
     console.log(datas);
   }
