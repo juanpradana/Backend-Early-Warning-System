@@ -2,7 +2,7 @@ const datas = require('./datas');
 const CONFIG = require('./global/config');
 
 const addDataHandler = (request, h) => {
-  const { codeUnit } = request.query;
+  const { codeUnit } = request.params;
 
   const {
     date,
@@ -80,7 +80,45 @@ const getAllDataHandler = (request, h) => {
   return response;
 };
 
+const getDataByCodeUnitHandler = (request, h) => {
+  const { codeUnit } = request.params;
+  const { rt } = request.query;
+  if (CONFIG.CONFIG.CODE_LIST.includes(codeUnit)) {
+    try {
+      if (rt) {
+        const response = h.response({
+          status: 'success',
+          data: datas.find((data) => data[`${codeUnit}`])[`${codeUnit}`][0],
+        });
+        response.code(200);
+        return response;
+      }
+      const response = h.response({
+        status: 'success',
+        data: datas.find((data) => data[`${codeUnit}`])[`${codeUnit}`],
+      });
+      response.code(200);
+      return response;
+    } catch (err) {
+      const response = h.response({
+        status: `${err}`,
+        message: 'Data gagal ditemukan',
+      });
+      response.code(500);
+      return response;
+    }
+  } else {
+    const response = h.response({
+      status: 'error',
+      message: 'error param',
+    });
+    response.code(500);
+    return response;
+  }
+};
+
 module.exports = {
   addDataHandler,
   getAllDataHandler,
+  getDataByCodeUnitHandler,
 };

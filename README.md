@@ -11,14 +11,16 @@
 
 **GET**
 
-http://host:port/datas?codeUnit=
+http://host:port/datas/codeUnit?rt=true
+
+http://host:port/datas/codeUnit
 
 http://host:port/datas
 
 
 **POST**
 
-http://host:port/datas?codeUnit=
+http://host:port/datas/codeUnit
 
 (type:json)
 
