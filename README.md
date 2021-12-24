@@ -6,8 +6,6 @@
 - Aulia Rahman
 - Muhammad Juan Pradana
 
-## Backend-Early-Warning-System
-It is a dashboard that displays photos at the location of PUMMA devices every 2 minutes, graphs of sea level and device temperatures, data in tables, and device locations.
 
 ## How To Use
 
@@ -26,7 +24,7 @@ http://host:port/datas/codeUnit
 
 (type:json)
 
-## Dashboard-Early-Warning-System
+## Backend-Early-Warning-System
 This is the backend that is used to send data from the PUMMA device to the dashboard.
 
 ## requirement
